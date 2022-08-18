@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+{{product.description}}
+{% endblock %}
+{% block title %}
+{{product.name}}
+{% endblock %}
+{% block content %}
+
+        <div class="container">
+            <p><a href="{% url 'shopapp:allprodcat' %}">Home</a> | <a href="{{ products.category.geturl }}">{{products.category.name}}</a> | {{products.name}}</p>
+        </div>
+<div class="container" style="padding-top:20px; padding-bottom:60px;">
+    <div class="row">
+
+
+        <div class="col-md-6">
+                <img src="{{products.image.url}}" alt="{{products.name}}">
+        </div>
+
+
+
+        <div class="col-md-6">
+         <div class="text-justify">
+          <h2>{{products.name}}</h2>
+          <p>${{products.price}}</p>
+          <h4>Product Details</h4>
+          <p>{{products.description}}</p>
+             {% if products.stock <= 0 %}
+             <p>Out of stock</p>
+             {% else %}
+             <a class="btn btn-secondary" href="{% url 'cart:add_cart' products.id %}">Add to Cart</a>
+             {% endif %}
+
+          </div>
+         </div>
+    </div>
+</div>
+{% endblock %}

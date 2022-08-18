@@ -1,0 +1,20 @@
+
+.nav-item {
+    letter-spacing: .2em;
+    font-size:14px;
+    text-transform: uppercase;
+}
+
+.dropdown-item {
+    letter-spacing: .2em;
+    font-size:14px;
+    text-transform: lowercase;
+}
+
+.my_footer {
+    background-color:yellow;
+}
+.my_footer p{
+    padding-top:30px;
+    font-color:green;
+}
